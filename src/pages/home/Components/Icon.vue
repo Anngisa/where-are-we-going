@@ -57,6 +57,8 @@
 	
 	.icons>>>.swiper-container
 		height:3.7rem
+		padding-top:.2rem
+		box-sizing:border-box
 	.icons
 		width:100%
 		overflow:hidden
@@ -84,5 +86,5 @@
 				height:.44rem 
 				color:$darkStyleColor
 				text-align:center
-
+				ellipsis()
 </style>

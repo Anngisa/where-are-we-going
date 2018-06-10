@@ -87,7 +87,13 @@ html{
     font-size:50px;
 }
 body {
-    font-size: 10px;
+    font-size: 14px;
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+button{
+    border:none;
+}
+em{
+    font-style: normal;
 }
