@@ -2,7 +2,7 @@
 	<div>
 		<div class="title">猜你喜欢</div>
 		<ul>
-			<li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+			<li class="item border-bottom" v-for="item of List" :key="item.id">
 				<img class="item-img" :src="item.imgUrl"/>
 				<div class="item-info">
 					<p class="item-title">{{item.title}}</p>
@@ -17,15 +17,8 @@
 <script >
 	export default{
 		name:'HomeRecommend',
-		data(){
-			return {
-				recommendList:[
-					{id:"001",imgUrl:"http://img1.qunarzz.com/sight/p0/1801/66/665b245a7ca8728a3.img.jpg_200x200_88d144ad.jpg",title:"杭州烂苹果乐园",desc:"游玩首选",price:'123'},
-					{id:"002",imgUrl:"http://img1.qunarzz.com/sight/p0/1801/66/665b245a7ca8728a3.img.jpg_200x200_88d144ad.jpg",title:"杭州烂苹果乐园",desc:"游玩首选",price:'123'},
-					{id:"003",imgUrl:"http://img1.qunarzz.com/sight/p0/1801/66/665b245a7ca8728a3.img.jpg_200x200_88d144ad.jpg",title:"杭州烂苹果乐园",desc:"游玩首选",price:'123'}
-				]
-			}
-			
+		props:{
+			List:Array
 		}
 	}
 </script>
