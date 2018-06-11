@@ -97,3 +97,6 @@ button{
 em{
     font-style: normal;
 }
+input{
+    outline:none;
+}
