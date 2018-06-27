@@ -12,12 +12,12 @@
 			<div class="area">
 				<div class="title border-topbottom">热门城市</div>
 				<div class="button-list">
-					<div class="button-wrapper" v-for="item of hot" :key="item.id">
+					<div class="button-wrapper" v-for="item of hot" :key="item.id" >
 						<div class="button">{{item.name}}</div>
 					</div>
 				</div>
 			</div>
-			<div class="area" v-for="(item,key) of json">
+			<div class="area" v-for="(item,key,index) of json" :ref="key.toUpperCase()" >
 				<div class="title border-topbottom">{{key.toUpperCase()}}</div>
 				<div class="item-list">
 					<div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id">
@@ -39,7 +39,8 @@
 		},
 		props:{
 			hot:Array,
-			cities:Array
+			cities:Array,
+			letter:String
 		}, 
 		methods:{
 
@@ -69,8 +70,17 @@
 		mounted(){
 			this.scroll=new BScroll(this.$refs.wrapperList,{
 				click:true,
+				passive: true
 			})
 
+		},
+		watch:{
+			letter(){
+				if(this.letter){
+					const element=this.$refs[this.letter][0]
+					this.scroll.scrollToElement(element)
+				}
+			}
 		}
 	}
 </script>
