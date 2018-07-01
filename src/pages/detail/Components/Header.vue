@@ -63,6 +63,7 @@ export default{
 		top:0
 		left:0
 		right:0 
+		z-index:2
 		height:.86rem
 		line-height:.86rem
 		text-align:center
