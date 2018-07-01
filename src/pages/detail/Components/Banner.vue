@@ -7,15 +7,19 @@
 			<div class="banner-title">杭州烂苹果乐园</div>
 		</div>
 	</div>
-	<common-gallary :imgs="imgs" v-show="showGallary" @close="handleGalleryClose"></common-gallary>
+	<fade-animation>
+		<common-gallary :imgs="imgs" v-show="showGallary" @close="handleGalleryClose"></common-gallary>
+	</fade-animation>
 </div>	
 </template>
 <script>
 import commonGallary from 'common/gallary/Gallary';
+import FadeAnimation from 'common/fade/fadeAnimation';
 export default{
 	name:'detailBanner',
 	components:{
-		commonGallary
+		commonGallary,
+		FadeAnimation
 	},
 	data(){
 		return {
