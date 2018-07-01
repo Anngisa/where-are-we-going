@@ -2,15 +2,20 @@
 	<div>
 		<div class="title">猜你喜欢</div>
 		<ul>
-			<li class="item border-bottom" v-for="item of List" :key="item.id">
+			<router-link  
+				tag="li" 
+				class="item border-bottom" 
+				v-for="item of List" 
+				:key="item.id"
+				:to="'/detail/'+item.id"
+			>
 				<img class="item-img" :src="item.imgUrl"/>
 				<div class="item-info">
 					<p class="item-title">{{item.title}}</p>
 					<p class="item-desc">{{item.desc}}</p>
 					<p class="item-price"><span>￥</span><em class="mpg-price-num">{{item.price}}</em>起</p>
 				</div>
-				
-			</li>
+			</router-link>
 		</ul>
 	</div>
 </template>
